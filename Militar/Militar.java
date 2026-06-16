@@ -3,10 +3,12 @@ import Reino.Reino;
 public abstract class Militar{
     protected int poder;
     protected Reino reino;
+    protected double custo;
 
-    public Militar(int poder, Reino reino) {
+    public Militar(int poder, Reino reino, double custo) {
         this.reino = reino;
         this.poder = poder;
+        this.custo = custo;
         reino.adicionarMilitar(this);
     }
 
