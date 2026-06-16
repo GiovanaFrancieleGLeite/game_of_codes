@@ -5,11 +5,13 @@ public class Reino {
     private int id;
     private String nome;
     private ArrayList<Militar> militares;
+    private ArrayList<ConselhoReal> conselhos;
 
     public Reino(int id, String nome) {
         this.id = id;
         this.nome = nome;
         this.militares = new ArrayList<>();
+        this.conselhos = new ArrayList<>();
     }
 
     public int getId() {
@@ -36,6 +38,14 @@ public class Reino {
         this.militares = militares;
     }
 
+    public ArrayList<ConselhoReal> getConselhos() {
+        return conselhos;
+    }
+
+    public void setConselhos(ArrayList<ConselhoReal> conselhos) {
+        this.conselhos = conselhos;
+    }
+
     public void mostrarMilitares(){
         System.out.println("O reino " + nome + " possui " + militares.size() + " unidade(s) militar(es).");
     }
@@ -44,8 +54,12 @@ public class Reino {
         militares.add(militar);
     }
 
+    public void adicionarConselho(ConselhoReal conselho) {
+        conselhos.add(conselho);
+    }
+
     public void atacar() {
-        System.out.println("=== O Reino.Reino " + nome + " iniciou um ataque! ===");
+        System.out.println("=== O Reino " + nome + " iniciou um ataque! ===");
         for(Militar m : militares) {
             m.atacar();
         }
