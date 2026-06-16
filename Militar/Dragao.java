@@ -1,12 +1,12 @@
 package Militar;
 
-public class Dragao extends Militar {
+public class Dragao extends Militar{
     protected boolean sangueTargaryen;
     protected String nomeDrag;
     protected float tamanho;
 
-    public Dragao(Reino reino, int poder, boolean sangueTargaryen, String nomeDrag, float tamanho){
-        super(poder, reino);
+    public Dragao(Reino reino, int poder, boolean sangueTargaryen, String nomeDrag, float tamanho, double custo){
+        super(poder, reino, custo);
         this.sangueTargaryen = sangueTargaryen;
         this.nomeDrag = nomeDrag;
         this.tamanho = tamanho;
@@ -19,7 +19,7 @@ public class Dragao extends Militar {
 
     public void mostrarInfo(){
         System.out.println("=== INFORMAÇÕES DO DRAGÃO ===");
-        System.out.println("Reino.Reino Proprietário: " + reino.getNome());
+        System.out.println("Reino Proprietário: " + reino.getNome());
         System.out.println("Nome do Dragão: " + nomeDrag);
         if(sangueTargaryen) {
             System.out.println("Possui sangue Targaryen? SIM");
