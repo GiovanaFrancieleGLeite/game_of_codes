@@ -1,9 +1,16 @@
 package ConselhoReal;
 
 public abstract class ConselhoReal{
-    public String nome;
-    protected int lealdade; // O nivel de lealdade dos conselheiros
+    protected String nome;
+    protected int lealdade;
+    protected Reino reino; // composição
 
-    @Override
-    public ativar();
+    public ConselhoReal(String nome, int lealdade, Reino reino) {
+        this.nome = nome;
+        this.lealdade = lealdade;
+        this.reino = reino;
+        reino.adicionarConselho(this);
+    }
+
+    public abstract void ativar();
 }
