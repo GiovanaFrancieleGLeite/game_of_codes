@@ -1,5 +1,7 @@
 package CasaNobre;
 
+import Reino.Reino;
+
 public class Targaryen extends CasaNobre {
     protected boolean imunidadeAoFogo;
 

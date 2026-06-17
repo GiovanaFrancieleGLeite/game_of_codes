@@ -1,20 +1,63 @@
 package Reino;
 
+import CasaNobre.CasaNobre;
+import ConselhoReal.ConselheiroReal;
+import Militar.Militar;
 import java.util.ArrayList;
+
+
 public class Reino {
     private int id;
     private String nome;
     private ArrayList<Militar> militares;
-    private ArrayList<ConselhoReal> conselhos;
+    private ArrayList<ConselheiroReal> conselhos;
+    private ArrayList<CasaNobre> casasNobres;
 
     public Reino(int id, String nome) {
         this.id = id;
         this.nome = nome;
         this.militares = new ArrayList<>();
+        this.casasNobres = new ArrayList<>();
         this.conselhos = new ArrayList<>();
     }
 
-    public int getId() {
+    public void mostrarMilitares(){
+        System.out.println("O reino " + nome + " possui " + militares.size() + " unidade(s) militar(es).");
+    }
+
+
+    // Métodos para adicionar militares, conselhos e casas nobres
+    public void adicionarMilitar(Militar militar){
+        militares.add(militar);
+    }
+
+    public void adicionarConselheiroReal(ConselheiroReal conselheiro) {
+        conselhos.add(conselheiro);
+    }
+
+    public void adicionarCasaNobre(CasaNobre casa) {
+        casasNobres.add(casa);
+    }
+
+
+    // Método para atacar usando todas as unidades militares do reino
+    public void atacar() {
+        System.out.println("=== O Reino " + nome + " iniciou um ataque! ===");
+        for(Militar m : militares) {
+            m.atacar();
+        }
+    }
+
+    public void reunirConselho() {
+        System.out.println("=== O Reino " + nome + " está reunindo o conselho real! ===");
+        for(ConselheiroReal c : conselhos) {
+            c.ativar();
+        }
+    }
+
+
+    // Getters e Setters
+        public int getId() {
         return id;
     }
 
@@ -38,30 +81,11 @@ public class Reino {
         this.militares = militares;
     }
 
-    public ArrayList<ConselhoReal> getConselhos() {
+    public ArrayList<ConselheiroReal> getConselhos() {
         return conselhos;
     }
 
-    public void setConselhos(ArrayList<ConselhoReal> conselhos) {
+    public void setConselhos(ArrayList<ConselheiroReal> conselhos) {
         this.conselhos = conselhos;
-    }
-
-    public void mostrarMilitares(){
-        System.out.println("O reino " + nome + " possui " + militares.size() + " unidade(s) militar(es).");
-    }
-
-    public void adicionarMilitar(Militar militar){
-        militares.add(militar);
-    }
-
-    public void adicionarConselho(ConselhoReal conselho) {
-        conselhos.add(conselho);
-    }
-
-    public void atacar() {
-        System.out.println("=== O Reino " + nome + " iniciou um ataque! ===");
-        for(Militar m : militares) {
-            m.atacar();
-        }
     }
 }

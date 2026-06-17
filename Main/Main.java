@@ -1,26 +1,32 @@
 package Main;
 
+import ConselhoReal.MaoRei;
+import ConselhoReal.MestreMoeda;
+import ConselhoReal.MestreSussurros;
 import Militar.Dragao;
 import Militar.Exercito;
 import Militar.Navio;
+import Reino.Reino;
+
 public class Main {
     public static void main(String[] args) {
-        Reino reino1 = new Reino(1, "Casa Stark");
-        Reino reino2 = new Reino(2, "Casa Lannister");
-        Reino reino3 = new Reino(3, "Casa Targaryen");
-        Reino reino4 = new Reino(4, "Casa Greyjoy");
+        Reino reino1 = new Reino(1, "Ilhas de ferro");
+        Reino reino2 = new Reino(2, "Valíria");
+        Reino reino3 = new Reino(3, "Porto Real");
 
-        Dragao dragao1 = new Dragao(reino3, 100, true, "Drogon", 15, 400);
-        Dragao dragao2 = new Dragao(reino3, 95, true, "Viserion", 14, 500);
-        Dragao dragao3 = new Dragao(reino3, 90, true, "Rhaegal", 14, 600);
-        Dragao dragao4 = new Dragao(reino1, 100, false, "Ozzyosborrs", 16, 666);
+        Dragao dragao1 = new Dragao(reino2, 100, true, "Drogon", 15, 400);
+        Dragao dragao2 = new Dragao(reino2, 95, true, "Viserion", 14, 500);
+        Dragao dragao3 = new Dragao(reino2, 90, true, "Rhaegal", 14, 600);
+        Dragao dragao4 = new Dragao(reino2, 100, false, "Ozzyosborrs", 16, 666);
 
-        Navio navio1 = new Navio(reino4, 80, "Silêncio", 4000, 200, 600);
-        Navio navio2 = new Navio(reino4, 75, "Vento Negro", 3500, 180, 700);
+        Navio navio1 = new Navio(reino1, 80, "Silêncio", 4000, 200, 600);
+        Navio navio2 = new Navio(reino1, 75, "Vento Negro", 3500, 180, 700);
 
         Exercito exercito1 = new Exercito(reino3, 85, 10000, 200);
-        Exercito exercito2 = new Exercito(reino1, 95, 8000, 340);
-        Exercito exercito3 = new Exercito(reino2, 90, 12000, 400);
+        Exercito exercito2 = new Exercito(reino3, 85, 10000, 200);
+        Exercito exercito3 = new Exercito(reino2, 95, 8000, 340);
+        Exercito exercito4 = new Exercito(reino1, 90, 12000, 400);
+
 /*
         reino1.mostrarMilitares();
         reino2.mostrarMilitares();
@@ -33,13 +39,15 @@ public class Main {
         dragao1.batalhar(navio1);
 */        
 
-    MaoRei ned = new MaoDoRei("Ned Stark", 90, westeros);
-    MestreMoeda tywin = new MestreMoeda("Tywin Lannister", 55, westeros;
-    MestreSussurros varys = new MestreSussurros("Varys", 25, westeros);
+        MaoRei maoReino3 = new MaoRei("Tywin Lannister", 90, reino3);
+        MestreMoeda mestreMoedaReino3 = new MestreMoeda("Mindinho", 55, reino3, 123.00);
+        MestreSussurros mestreSussurrosReino3 = new MestreSussurros("Varys", 25, reino3);
 
-    double custoMilitar = 400.0;
+        reino3.adicionarConselheiroReal(maoReino3);
+        reino3.adicionarConselheiroReal(mestreMoedaReino3);
+        reino3.adicionarConselheiroReal(mestreSussurrosReino3);
 
-    SistemaSoberania.rodarTurno(ned, tywin, varys, custoMilitar);
+        double custoMilitar = 400.0;
             
     }
 }

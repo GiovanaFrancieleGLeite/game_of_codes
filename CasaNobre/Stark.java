@@ -1,5 +1,7 @@
 package CasaNobre;
 
+import Reino.Reino;
+
 public class Stark extends CasaNobre {
     protected boolean resistenciaAoFrio;
 

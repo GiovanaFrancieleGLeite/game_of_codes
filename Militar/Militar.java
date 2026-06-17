@@ -1,3 +1,5 @@
+package Militar;
+
 import Reino.Reino;
 
 public abstract class Militar{

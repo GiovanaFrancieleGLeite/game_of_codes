@@ -1,5 +1,7 @@
 package Militar;
 
+import Reino.Reino;
+
 public class Dragao extends Militar{
     protected boolean sangueTargaryen;
     protected String nomeDrag;

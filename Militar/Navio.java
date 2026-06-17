@@ -1,5 +1,7 @@
 package Militar;
 
+import Reino.Reino;
+
 public class Navio extends Militar{
     protected String nomeNav;
     protected float peso;
