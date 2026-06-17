@@ -1,3 +1,5 @@
+package Militar;
+
 import Reino.Reino;
 
 public abstract class Militar{
@@ -10,6 +12,14 @@ public abstract class Militar{
         this.poder = poder;
         this.custo = custo;
         reino.adicionarMilitar(this);
+    }
+
+    public double getCusto(){
+        return custo;
+    }
+
+    public int getPoder(){
+        return poder;
     }
 
     public void atacar(){

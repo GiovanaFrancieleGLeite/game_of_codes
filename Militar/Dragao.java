@@ -1,5 +1,7 @@
 package Militar;
 
+import Reino.Reino;
+
 public class Dragao extends Militar{
     protected boolean sangueTargaryen;
     protected String nomeDrag;
@@ -10,6 +12,10 @@ public class Dragao extends Militar{
         this.sangueTargaryen = sangueTargaryen;
         this.nomeDrag = nomeDrag;
         this.tamanho = tamanho;
+    }
+
+    public String getNomeDrag() {
+        return nomeDrag;
     }
 
     @Override
@@ -33,3 +39,4 @@ public class Dragao extends Militar{
         System.out.println("O Dragão " + nomeDrag + " levanta vôo!");
     }
 }
+

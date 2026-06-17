@@ -1,5 +1,7 @@
 package Militar;
 
+import Reino.Reino;
+
 public class Exercito extends Militar{
     protected int qntSoldados;
 
