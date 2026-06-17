@@ -32,5 +32,14 @@ public class Main {
         dragao4.mostrarInfo();
         dragao1.batalhar(navio1);
 */        
+
+    MaoRei ned = new MaoDoRei("Ned Stark", 90, westeros);
+    MestreMoeda tywin = new MestreMoeda("Tywin Lannister", 55, westeros;
+    MestreSussurros varys = new MestreSussurros("Varys", 25, westeros);
+
+    double custoMilitar = 400.0;
+
+    SistemaSoberania.rodarTurno(ned, tywin, varys, custoMilitar);
+            
     }
 }
