@@ -1,5 +1,7 @@
 package Main;
 
+import CasaNobre.Stark;
+import CasaNobre.Targaryen;
 import ConselhoReal.MaoRei;
 import ConselhoReal.MestreMoeda;
 import ConselhoReal.MestreSussurros;
@@ -40,14 +42,16 @@ public class Main {
 */        
 
         MaoRei maoReino3 = new MaoRei("Tywin Lannister", 90, reino3);
-        MestreMoeda mestreMoedaReino3 = new MestreMoeda("Mindinho", 55, reino3, 123.00);
+        MestreMoeda mestreMoedaReino3 = new MestreMoeda("Mindinho", 55, reino3, 123);
         MestreSussurros mestreSussurrosReino3 = new MestreSussurros("Varys", 25, reino3);
 
-        reino3.adicionarConselheiroReal(maoReino3);
-        reino3.adicionarConselheiroReal(mestreMoedaReino3);
-        reino3.adicionarConselheiroReal(mestreSussurrosReino3);
+        MaoRei maoReino1 = new MaoRei("Jeca Tatu", 100, reino1);
+        MestreMoeda mestraMoeda1 = new MestreMoeda("Serj Tankian", 90, reino1, 100);
+        MestreSussurros mestreSussurros1 = new MestreSussurros("Paulina", 70, reino1);
 
-        double custoMilitar = 400.0;
-            
+        Targaryen targaryen1 = new Targaryen("Dio", "Eu sou pior que o Ozzy", reino2, true);
+        Stark stark1 = new Stark("Tony", "I am Iron Man", reino1, true);
+
+        targaryen1.vincularDragao(dragao4);
     }
 }
