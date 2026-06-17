@@ -1,5 +1,6 @@
 package CasaNobre;
 
+import Militar.Dragao;
 import Reino.Reino;
 
 public class Targaryen extends CasaNobre {
@@ -19,11 +20,11 @@ public class Targaryen extends CasaNobre {
         }
     }
 
-    public void vincularDragao() {
+    public void vincularDragao(Dragao dragao) {
         if (this.imunidadeAoFogo) {
-            System.out.println("[" + this.nome + " - Casa Targaryen]: O vínculo com o dragão é estabelecido! As chamas não podem nos tocar. Dracarys!");
+            System.out.println("[" + this.nome + " - Casa Targaryen]: O vínculo com o dragão " + dragao.getNomeDrag() + " é estabelecido! As chamas não podem nos tocar. Dracarys!");
         } else {
-            System.out.println("[" + this.nome + " - Casa Targaryen]: Sem imunidade ao fogo, a tentativa de vincular o dragão é perigosa. O dragão rejeita o vínculo...");
+            System.out.println("[" + this.nome + " - Casa Targaryen]: Sem imunidade ao fogo, a tentativa de vincular o dragão " + dragao.getNomeDrag() + "é perigosa. O dragão rejeita o vínculo...");
         }
     }
 }
