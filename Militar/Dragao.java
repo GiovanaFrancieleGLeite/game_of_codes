@@ -14,6 +14,10 @@ public class Dragao extends Militar{
         this.tamanho = tamanho;
     }
 
+    public String getNomeDrag() {
+        return nomeDrag;
+    }
+
     @Override
     public void atacar(){
         System.out.println("O Dragão " + nomeDrag + " está cuspindo fogo!");
@@ -35,3 +39,4 @@ public class Dragao extends Militar{
         System.out.println("O Dragão " + nomeDrag + " levanta vôo!");
     }
 }
+
