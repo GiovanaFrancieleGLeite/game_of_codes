@@ -12,46 +12,73 @@ import Reino.Reino;
 
 public class Main {
     public static void main(String[] args) {
-        Reino reino1 = new Reino(1, "Ilhas de ferro");
-        Reino reino2 = new Reino(2, "Valíria");
-        Reino reino3 = new Reino(3, "Porto Real");
 
-        Dragao dragao1 = new Dragao(reino2, 100, true, "Drogon", 15, 400);
-        Dragao dragao2 = new Dragao(reino2, 95, true, "Viserion", 14, 500);
-        Dragao dragao3 = new Dragao(reino2, 90, true, "Rhaegal", 14, 600);
-        Dragao dragao4 = new Dragao(reino2, 100, false, "Ozzyosborrs", 16, 666);
+        // ===== Criação dos reinos =====
+        // Cada reino é uma composição: ele agrega militares, conselheiros e casas nobres.
+        Reino norte = new Reino(1, "Winterfell");
+        Reino portoReal = new Reino(2, "Porto Real");
+        Reino valiria = new Reino(3, "Valíria");
 
-        Navio navio1 = new Navio(reino1, 80, "Silêncio", 4000, 200, 600);
-        Navio navio2 = new Navio(reino1, 75, "Vento Negro", 3500, 180, 700);
+        // ===== Unidades militares =====
+        // Ao serem criadas, as unidades já se registram no reino (composição feita no construtor de Militar).
+        Dragao drogon = new Dragao(valiria, 100, true, "Drogon", 15, 400);
+        Dragao viserion = new Dragao(valiria, 95, true, "Viserion", 14, 500);
+        Dragao ozzyosborrs = new Dragao(valiria, 90, false, "Ozzyosborrs", 13, 666);
 
-        Exercito exercito1 = new Exercito(reino3, 85, 10000, 200);
-        Exercito exercito2 = new Exercito(reino3, 85, 10000, 200);
-        Exercito exercito3 = new Exercito(reino2, 95, 8000, 340);
-        Exercito exercito4 = new Exercito(reino1, 90, 12000, 400);
+        Navio silencio = new Navio(portoReal, 80, "Silêncio", 4000, 200, 600);
+        Navio ventoNegro = new Navio(portoReal, 75, "Vento Negro", 3500, 180, 700);
 
-/*
-        reino1.mostrarMilitares();
-        reino2.mostrarMilitares();
-        reino3.mostrarMilitares();
-        reino4.mostrarMilitares();
-        reino4.atacar();
-        reino3.atacar();
-        dragao2.mostrarInfo();
-        dragao4.mostrarInfo();
-        dragao1.batalhar(navio1);
-*/        
+        Exercito legiaoDoNorte = new Exercito(norte, 95, 8000, 340);
+        Exercito guardaReal = new Exercito(portoReal, 90, 12000, 400);
 
-        MaoRei maoReino3 = new MaoRei("Tywin Lannister", 90, reino3);
-        MestreMoeda mestreMoedaReino3 = new MestreMoeda("Mindinho", 55, reino3, 123);
-        MestreSussurros mestreSussurrosReino3 = new MestreSussurros("Varys", 25, reino3);
+        // ===== Conselheiros reais =====
+        // Também se registram automaticamente no reino ao serem criados.
+        MaoRei maoNorte = new MaoRei("Eddard Stark", 90, norte);
+        MestreMoeda moedaPortoReal = new MestreMoeda("Mindinho", 55, portoReal, 1000.0);
+        MestreSussurros sussurrosPortoReal = new MestreSussurros("Varys", 80, portoReal);
 
-        MaoRei maoReino1 = new MaoRei("Jeca Tatu", 100, reino1);
-        MestreMoeda mestraMoeda1 = new MestreMoeda("Serj Tankian", 90, reino1, 100);
-        MestreSussurros mestreSussurros1 = new MestreSussurros("Paulina", 70, reino1);
+        // ===== Casas nobres =====
+        Stark casaStark = new Stark("Eddard Stark", "O inverno está chegando", norte, true);
+        Targaryen casaTargaryen = new Targaryen("Daenerys Targaryen", "Fogo e Sangue", valiria, true);
 
-        Targaryen targaryen1 = new Targaryen("Dio", "Eu sou pior que o Ozzy", reino2, true);
-        Stark stark1 = new Stark("Tony", "I am Iron Man", reino1, true);
+        // ===== 1) Composição: quantas unidades cada reino agrega =====
+        System.out.println("\n========== FORÇA DOS REINOS ==========");
+        norte.mostrarMilitares();
+        portoReal.mostrarMilitares();
+        valiria.mostrarMilitares();
 
-        targaryen1.vincularDragao(dragao4);
+        // ===== 2) Polimorfismo: cada Militar responde a atacar() à sua maneira =====
+        System.out.println("\n========== OS REINOS ATACAM ==========");
+        valiria.atacar();
+        portoReal.atacar();
+
+        // ===== 3) Métodos próprios das subclasses =====
+        System.out.println("\n========== HABILIDADES ESPECÍFICAS ==========");
+        drogon.mostrarInfo();
+        drogon.voar();
+        silencio.mostrarInfo();
+        silencio.navegar();
+        legiaoDoNorte.mostrarInfo();
+
+        // ===== 4) Batalha entre duas unidades (compara o poder) =====
+        System.out.println("\n========== BATALHA ==========");
+        drogon.batalhar(silencio);
+
+        // ===== 5) Polimorfismo no conselho: cada conselheiro reage segundo sua lealdade =====
+        System.out.println("\n========== CONSELHO REAL ==========");
+        portoReal.reunirConselho();
+        norte.reunirConselho();
+
+        // ===== 6) Tesouraria: o Mestre da Moeda paga as tropas =====
+        System.out.println("\n========== TESOURARIA ==========");
+        moedaPortoReal.ativar();
+        moedaPortoReal.pagarTropas(guardaReal.getCusto());
+
+        // ===== 7) Casas nobres convocam vassalos e usam suas habilidades =====
+        System.out.println("\n========== CASAS NOBRES ==========");
+        casaStark.convocarVassalos();
+        casaStark.vinculoLobo();
+        casaTargaryen.convocarVassalos();
+        casaTargaryen.vincularDragao(drogon);
     }
 }

@@ -3,9 +3,9 @@ package ConselhoReal;
 import Reino.Reino;
 
 public class MestreMoeda extends ConselheiroReal{
-    protected int ouroArrecadado;
+    protected double ouroArrecadado;
 
-    public MestreMoeda(String nome, int lealdade, Reino reino, int ouroArrecadado) {
+    public MestreMoeda(String nome, int lealdade, Reino reino, double ouroArrecadado) {
         super(nome, lealdade, reino);
         this.ouroArrecadado = ouroArrecadado;
     }
@@ -17,7 +17,7 @@ public class MestreMoeda extends ConselheiroReal{
             System.out.println("[" + this.nome + " - Mestre da Moeda]: Majestade, a população pagou os impostos em dia. Arrecadamos " + this.ouroArrecadado + " moedas.");
         } else if (this.lealdade >= 40 && this.lealdade<= 70) {
             this.ouroArrecadado += 300.0;
-            System.out.println("[" + this.nome + " - Mestre da Moeda]: Os cobradores voltaram das vilas. Arrecadamos " + this.ouroArrecadado + " moedas.'");
+            System.out.println("[" + this.nome + " - Mestre da Moeda]: Os cobradores voltaram das vilas. Arrecadamos " + this.ouroArrecadado + " moedas.");
         } else {
             this.ouroArrecadado += 100.0;
             System.out.println("[" + this.nome + " - Mestre da Moeda]: O povo está rebelde e quase ninguém pagou. Só consegui pegar " + this.ouroArrecadado + " moedas. ");

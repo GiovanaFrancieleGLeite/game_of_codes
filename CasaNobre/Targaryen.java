@@ -24,7 +24,7 @@ public class Targaryen extends CasaNobre {
         if (this.imunidadeAoFogo) {
             System.out.println("[" + this.nome + " - Casa Targaryen]: O vínculo com o dragão " + dragao.getNomeDrag() + " é estabelecido! As chamas não podem nos tocar. Dracarys!");
         } else {
-            System.out.println("[" + this.nome + " - Casa Targaryen]: Sem imunidade ao fogo, a tentativa de vincular o dragão " + dragao.getNomeDrag() + "é perigosa. O dragão rejeita o vínculo...");
+            System.out.println("[" + this.nome + " - Casa Targaryen]: Sem imunidade ao fogo, a tentativa de vincular o dragão " + dragao.getNomeDrag() + " é perigosa. O dragão rejeita o vínculo...");
         }
     }
 }

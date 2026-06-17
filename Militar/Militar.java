@@ -14,6 +14,14 @@ public abstract class Militar{
         reino.adicionarMilitar(this);
     }
 
+    public double getCusto(){
+        return custo;
+    }
+
+    public int getPoder(){
+        return poder;
+    }
+
     public void atacar(){
         System.out.println("Uma unidade militar de " + reino.getNome() + " está atacando!");
     }
