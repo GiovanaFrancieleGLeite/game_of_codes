@@ -3,9 +3,9 @@ package ConselhoReal;
 import Reino.Reino;
 
 public class MestreMoeda extends ConselheiroReal{
-    protected double ouroArrecadado;
+    protected int ouroArrecadado;
 
-    public MestreMoeda(String nome, int lealdade, Reino reino, double ouroArrecadado) {
+    public MestreMoeda(String nome, int lealdade, Reino reino, int ouroArrecadado) {
         super(nome, lealdade, reino);
         this.ouroArrecadado = ouroArrecadado;
     }
